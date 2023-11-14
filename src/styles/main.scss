@@ -1,5 +1,29 @@
-$bgcolor: rgb(247, 230, 230);
+@use 'hero';
+@use 'texts';
+@use 'variaveis';
+@use 'fonts';
+
+
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 40px){
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
-    background-color: $bgcolor;
+    background-color: variaveis.$corDeFundo;
+    font-family: Avenir, sans-serif;
 }
+
